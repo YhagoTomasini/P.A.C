@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bgoaxw7yrhqi5"]
 
-[ext_resource type="Script" path="res://Cenas/prismaControler.gd" id="1_g1cbp"]
+[ext_resource type="Script" path="res://Scripts/prismaControler.gd" id="1_g1cbp"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_27rsb"]
 

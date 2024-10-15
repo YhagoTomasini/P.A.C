@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cfhnv5v6bi30u"]
 
-[ext_resource type="Script" path="res://Cenas/inimigoManager.gd" id="1_coy8l"]
+[ext_resource type="Script" path="res://Scripts/inimigoManager.gd" id="1_coy8l"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_hiu3t"]
 
