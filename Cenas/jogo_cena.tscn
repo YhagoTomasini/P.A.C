@@ -40,6 +40,3 @@ position = Vector2(136, 120)
 
 [node name="Inimigo3" parent="." instance=ExtResource("3_hh0kq")]
 position = Vector2(200, 120)
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(160, 184)
