@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfhnv5v6bi30u"]
+
+[ext_resource type="Script" path="res://Cenas/inimigoManager.gd" id="1_coy8l"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hiu3t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ctf5n"]
+radius = 8.16327
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_scsko"]
+radius = 240.0
+
+[node name="Inimigo" type="CharacterBody2D" node_paths=PackedStringArray("nav_agent")]
+collision_layer = 4
+collision_mask = 7
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_coy8l")
+nav_agent = NodePath("movimentoInim/NavigationAgent2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.433333, 0, 1, 1)
+scale = Vector2(16, 16)
+texture = SubResource("CanvasTexture_hiu3t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.98, 0.98)
+shape = SubResource("CircleShape2D_ctf5n")
+
+[node name="movimentoInim" type="Node2D" parent="."]
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="movimentoInim"]
+avoidance_enabled = true
+debug_enabled = true
+
+[node name="ReTime" type="Timer" parent="movimentoInim"]
+wait_time = 0.1
+autostart = true
+
+[node name="aggro" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="aggro"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="aggro/Area2D"]
+shape = SubResource("CircleShape2D_scsko")
+
+[connection signal="timeout" from="movimentoInim/ReTime" to="." method="_on_re_time_timeout"]
+[connection signal="area_entered" from="aggro/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="aggro/Area2D" to="." method="_on_area_2d_area_exited"]

@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://bgoaxw7yrhqi5"]
+
+[ext_resource type="Script" path="res://Cenas/prismaControler.gd" id="1_g1cbp"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_27rsb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_st0ow"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6dumk"]
+radius = 8.08081
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5w67x"]
+radius = 8.0
+
+[node name="Prisma" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 7
+wall_min_slide_angle = 0.0
+script = ExtResource("1_g1cbp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.0333333, 1, 0, 1)
+scale = Vector2(16, 16)
+texture = SubResource("CanvasTexture_27rsb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_st0ow")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+modulate = Color(0.0333333, 1, 0, 1)
+scale = Vector2(0.98, 0.98)
+shape = SubResource("CircleShape2D_6dumk")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_5w67x")
