@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bgoaxw7yrhqi5" path="res://Cenas/prisma.tscn" id="1_52qxi"]
 [ext_resource type="Texture2D" uid="uid://0a10xgcx8x7y" path="res://Imagens/Parede-P.A.C.png" id="1_lgqrm"]
 [ext_resource type="PackedScene" uid="uid://cfhnv5v6bi30u" path="res://Cenas/inimigo.tscn" id="3_hh0kq"]
-[ext_resource type="PackedScene" uid="uid://531y637wqq6m" path="res://Scripts/contador_de_fps.tscn" id="4_f33wp"]
+[ext_resource type="PackedScene" path="res://Scripts/contador_de_fps.tscn" id="4_f33wp"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_vuu0h"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
