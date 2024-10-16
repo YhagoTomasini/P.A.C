@@ -5,13 +5,13 @@
 [sub_resource type="CanvasTexture" id="CanvasTexture_hiu3t"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ctf5n"]
-radius = 8.16327
+radius = 16.6667
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_scsko"]
-radius = 240.104
+radius = 627.74
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eiuap"]
-radius = 8.0
+radius = 16.0312
 
 [node name="Inimigo" type="CharacterBody2D" node_paths=PackedStringArray("nav_agent")]
 collision_layer = 4
@@ -23,11 +23,11 @@ nav_agent = NodePath("movimentoInim/NavigationAgent2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.433333, 0, 1, 1)
-scale = Vector2(16, 16)
+scale = Vector2(32, 32)
 texture = SubResource("CanvasTexture_hiu3t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(0.95, 0.95)
+scale = Vector2(0.9, 0.9)
 shape = SubResource("CircleShape2D_ctf5n")
 
 [node name="movimentoInim" type="Node2D" parent="."]

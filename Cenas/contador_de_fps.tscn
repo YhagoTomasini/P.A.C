@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://531y637wqq6m"]
+[gd_scene load_steps=3 format=3 uid="uid://dwpwscc50q2yg"]
 
 [ext_resource type="Script" path="res://Scripts/contador_de_fps.gd" id="1_t5rk2"]
 

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var VELO = 50
+@export var VELO = 150
 @export var nav_agent: NavigationAgent2D
 
 var alvo= null

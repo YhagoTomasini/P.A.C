@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var VELO_MAX = 120
+@export var VELO_MAX = 200
 @export var ACELERACAO = VELO_MAX*10
 @export var FRICCAO = VELO_MAX*100
 @onready var eixos = Vector2.ZERO
