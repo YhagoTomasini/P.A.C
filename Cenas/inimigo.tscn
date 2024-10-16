@@ -7,11 +7,11 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_ctf5n"]
 radius = 8.16327
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_scsko"]
-radius = 240.104
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_eiuap"]
 radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_scsko"]
+radius = 240.104
 
 [node name="Inimigo" type="CharacterBody2D" node_paths=PackedStringArray("nav_agent")]
 collision_layer = 4
@@ -39,6 +39,13 @@ debug_enabled = true
 wait_time = 0.1
 autostart = true
 
+[node name="AreaMorte" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaMorte"]
+shape = SubResource("CircleShape2D_eiuap")
+
 [node name="aggro" type="Node2D" parent="."]
 
 [node name="Area2D" type="Area2D" parent="aggro"]
@@ -48,14 +55,7 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="aggro/Area2D"]
 shape = SubResource("CircleShape2D_scsko")
 
-[node name="AreaMorte" type="Area2D" parent="aggro"]
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="aggro/AreaMorte"]
-shape = SubResource("CircleShape2D_eiuap")
-
 [connection signal="timeout" from="movimentoInim/ReTime" to="." method="_on_re_time_timeout"]
+[connection signal="body_entered" from="AreaMorte" to="." method="_on_area_morte_body_entered"]
 [connection signal="area_entered" from="aggro/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="aggro/Area2D" to="." method="_on_area_2d_area_exited"]
-[connection signal="body_entered" from="aggro/AreaMorte" to="." method="_on_area_morte_body_entered"]
