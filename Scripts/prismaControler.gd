@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-@export var VELO_MAX = 120
-@export var ACELERACAO = VELO_MAX*10
-@export var FRICCAO = VELO_MAX*100
+@export var VELO_MAX = 100
+@export var ACELERACAO = 600
+@export var FRICCAO = 400
 @onready var eixos = Vector2.ZERO
 
 func _physics_process(delta):
@@ -35,10 +35,3 @@ func aplica_movimento(accel):
 	velocity += accel
 	velocity = velocity.limit_length(VELO_MAX)
 	
-func morte():
-	print("O jogador morreu")
-	get_tree().reload_current_scene()
-	
-func getPoints():
-	print("mais um")
-	#jogo_cena.addPoints()
