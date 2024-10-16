@@ -38,3 +38,8 @@ func _on_area_2d_area_entered(area):
 func _on_area_2d_area_exited(area):
 	if area.owner == alvo:
 		alvo = null
+
+
+func _on_area_morte_body_entered(body):
+	if body.name == "Prisma":
+		body.morte()

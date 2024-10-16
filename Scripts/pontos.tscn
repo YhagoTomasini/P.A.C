@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://duujjq5yupj0m"]
+
+[ext_resource type="Script" path="res://pontos.gd" id="1_vwwnw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j1cst"]
+radius = 6.0
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_r6xgu"]
+
+[node name="pontos" type="Area2D"]
+script = ExtResource("1_vwwnw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_j1cst")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.912878, 0.655259, 1)
+rotation = 0.785398
+scale = Vector2(8, 8)
+texture = SubResource("CanvasTexture_r6xgu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
