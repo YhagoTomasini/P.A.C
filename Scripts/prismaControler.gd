@@ -39,6 +39,6 @@ func morte():
 	print("O jogador morreu")
 	get_tree().reload_current_scene()
 	
-func getPoints():
-	print("mais um")
+#func getPoints():
+	#print("mais um")
 	#jogo_cena.addPoints()

@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://bgoaxw7yrhqi5"]
 
 [ext_resource type="Script" path="res://Scripts/prismaControler.gd" id="1_g1cbp"]
-[ext_resource type="Texture2D" path="res://Imagens/prisma BF.png" id="2_3xigm"]
-[ext_resource type="Texture2D" path="res://Imagens/prsima BA.png" id="3_evud4"]
+[ext_resource type="Texture2D" uid="uid://b7vblka0jj6v" path="res://Imagens/prisma BF.png" id="2_3xigm"]
+[ext_resource type="Texture2D" uid="uid://dy8a8uvebkdyu" path="res://Imagens/prsima BA.png" id="3_evud4"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_27rsb"]
 
