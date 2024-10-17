@@ -28,6 +28,8 @@ func rePath():
 	else:
 		nav_agent.target_position = posicaoInicial
 	
+func reposition():
+	position = posicaoInicial
 
 func _on_re_time_timeout():
 	rePath()
@@ -42,4 +44,4 @@ func _on_area_2d_area_exited(area):
 
 func _on_area_morte_body_entered(body):
 	if body.name == "Prisma":
-		body.morte()
+		body.gerenciaVidas()

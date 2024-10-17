@@ -8,7 +8,7 @@ func _ready() -> void:
 	if DadosGlobais.highScore < DadosGlobais.score:
 		DadosGlobais.highScore = DadosGlobais.score
 	
-	if DadosGlobais.score >= 17:
+	if DadosGlobais.score >= 467:
 		textFinal.text = "VITORIA\n:)"
 	else:
 		textFinal.text = "MORREU\n;-;"
@@ -21,7 +21,9 @@ func _ready() -> void:
 func _on_restart_pressed() -> void:
 	get_tree().change_scene_to_file("res://Cenas/jogo_cena.tscn")
 	DadosGlobais.score = 0
+	DadosGlobais.vidas = 3
 	
 func _on_back_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://Cenas/Menu_Inicial.tscn")
 	DadosGlobais.score = 0
+	DadosGlobais.vidas = 3

@@ -5,9 +5,17 @@ extends CharacterBody2D
 @export var FRICCAO = VELO_MAX*100
 @onready var eixos = Vector2.ZERO
 @onready var anim = $AnimatedSprite2D
+var posicaoI: Vector2
+
+@onready var inimigos = [get_node("../Inimigo"), get_node("../Inimigo2"), get_node("../Inimigo3"), get_node("../Inimigo4")]
 
 func _ready():
 	anim.play("default")
+	posicaoI = position
+	
+func _process(delta):
+	if DadosGlobais.score == 467:
+		morte()
 	
 func _physics_process(delta):
 	move(delta)
@@ -62,11 +70,34 @@ func atualizar_direcao():
 		else:
 			anim.flip_h= eixos.x < 0
 			
-func morte():
-	print("O jogador morreu")
+func gerenciaVidas():
+	DadosGlobais.vidas -= 1
 	
+	if DadosGlobais.vidas == 2:
+		var vidaTres = get_node("../Vida3")
+		vidaTres.queue_free()
+		reposition()
+		
+		for inimigo in inimigos:
+			inimigo.reposition()
+		
+	elif DadosGlobais.vidas == 1:
+		var vidaDois = get_node("../Vida2")
+		vidaDois.queue_free()
+		reposition()
+		
+		for inimigo in inimigos:
+			inimigo.reposition()
+
+		
+	elif DadosGlobais.vidas == 0:
+		morte()
+		
+	DadosGlobais.vidas
+	
+func reposition():
+	position = posicaoI
+	
+func morte():
 	get_tree().change_scene_to_file("res://Cenas/tela_morte.tscn")
 	
-#func getPoints():
-	#print("mais um")
-	#jogo_cena.addPoints()

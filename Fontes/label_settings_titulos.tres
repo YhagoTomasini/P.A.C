@@ -1,0 +1,13 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bpfky3myvj6am"]
+
+[ext_resource type="FontFile" uid="uid://b4ikhaw8fs2lt" path="res://Fontes/BrunoAceSC-Regular.ttf" id="1_mwmr0"]
+
+[resource]
+font = ExtResource("1_mwmr0")
+font_size = 36
+font_color = Color(0.360784, 0.964706, 0.290196, 1)
+outline_size = 35
+outline_color = Color(0.196078, 0.592157, 0.211765, 1)
+shadow_size = 61
+shadow_color = Color(0.905882, 0.882353, 0.898039, 0.133333)
+shadow_offset = Vector2(0, 0)
