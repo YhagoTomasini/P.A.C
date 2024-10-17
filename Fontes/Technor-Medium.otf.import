@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://d0db5k76jwnm6"
-path="res://.godot/imported/Technor-Medium.otf-e838cee87ad071631fe9ca0c569918da.fontdata"
+path="res://.godot/imported/Technor-Medium.otf-6331e73749f8174556ebd82fd9fe6f60.fontdata"
 
 [deps]
 
-source_file="res://Cenas/Technor-Medium.otf"
-dest_files=["res://.godot/imported/Technor-Medium.otf-e838cee87ad071631fe9ca0c569918da.fontdata"]
+source_file="res://Fontes/Technor-Medium.otf"
+dest_files=["res://.godot/imported/Technor-Medium.otf-6331e73749f8174556ebd82fd9fe6f60.fontdata"]
 
 [params]
 

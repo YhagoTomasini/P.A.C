@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://bbbrr2iqvimww"]
 
-[ext_resource type="Script" path="res://Cenas/menu_inicial.gd" id="1_6ecks"]
+[ext_resource type="Script" path="res://Scripts/menu_inicial.gd" id="1_6ecks"]
 [ext_resource type="Texture2D" uid="uid://0a10xgcx8x7y" path="res://Imagens/Parede-P.A.C.png" id="2_6n8y5"]
 [ext_resource type="Theme" uid="uid://duy7qv4vr6j5h" path="res://Fontes/botao_tema.tres" id="2_ktqr5"]
 [ext_resource type="Texture2D" uid="uid://i0mt1g7avud4" path="res://Imagens/TileMap_PAC_Prisma.png" id="3_5xpe3"]
