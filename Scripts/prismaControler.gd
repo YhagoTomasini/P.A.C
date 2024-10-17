@@ -64,6 +64,9 @@ func atualizar_direcao():
 			
 func morte():
 	print("O jogador morreu")
+	if DadosGlobais.highScore < DadosGlobais.score:
+		DadosGlobais.highScore = DadosGlobais.score
+	DadosGlobais.score = 0
 	get_tree().reload_current_scene()
 	
 #func getPoints():
