@@ -3,6 +3,7 @@ extends Control
 @onready var scoreValue: Label = %ScoreValue
 @onready var highScoreValue: Label = %HighScoreValue
 @onready var textFinal: Label = %"Label _ Morte"
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if DadosGlobais.highScore < DadosGlobais.score:

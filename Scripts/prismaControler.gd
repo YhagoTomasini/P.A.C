@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var FRICCAO = VELO_MAX*100
 @onready var eixos = Vector2.ZERO
 @onready var anim = $AnimatedSprite2D
+@onready var audWalk = $AudioAndando
 var posicaoI: Vector2
 
 @onready var inimigos = [get_node("../Inimigo"), get_node("../Inimigo2"), get_node("../Inimigo3"), get_node("../Inimigo4")]
@@ -50,9 +51,11 @@ func aplica_movimento(accel):
 	
 func atualizar_anim():
 	if eixos == Vector2.ZERO:
+		audWalk.stop()
 		if anim.animation != "default":
 			anim.play("default")
 	else:
+		audWalk.play()
 		if anim.animation != "moving":
 			anim.play("moving")
 		atualizar_direcao()
