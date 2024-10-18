@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/contador_de_fps.gd" id="1_t5rk2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_b1uye"]
+font_size = 32
 font_color = Color(0.188235, 0.858824, 0.00392157, 1)
 
 [node name="Contador De FPS" type="CanvasLayer"]
@@ -18,4 +19,5 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
+theme_override_font_sizes/font_size = 1
 label_settings = SubResource("LabelSettings_b1uye")

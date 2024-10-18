@@ -9,9 +9,9 @@ func _ready() -> void:
 		DadosGlobais.highScore = DadosGlobais.score
 	
 	if DadosGlobais.score >= 467:
-		textFinal.text = "VITORIA\n:)"
+		textFinal.text = ":)\nVITÓRIA"
 	else:
-		textFinal.text = "MORREU\n;-;"
+		textFinal.text = ";-;\nMORREU"
 		
 	
 	scoreValue.text = str(DadosGlobais.score)

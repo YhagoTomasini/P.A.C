@@ -60,16 +60,15 @@ func atualizar_anim():
 func atualizar_direcao():
 	if eixos.x != 0:
 		anim.rotation_degrees = 0
-		anim.flip_h= eixos.x > 0
-	elif eixos.y<0:
-		anim.rotation_degrees = 90
-	elif eixos.y>0:
-		anim.rotation_degrees = -90
-		if eixos.x < 0:
-			anim.flip_h= eixos.x > 0
-		else:
-			anim.flip_h= eixos.x < 0
-			
+		anim.flip_h = eixos.x > 0  
+	elif eixos.y > 0:
+		anim.rotation_degrees = -90 
+		anim.flip_h = false  
+	elif eixos.y < 0:
+		anim.rotation_degrees = 90  
+		anim.flip_h = false
+		
+
 func gerenciaVidas():
 	DadosGlobais.vidas -= 1
 	

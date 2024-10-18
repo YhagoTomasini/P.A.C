@@ -1,14 +1,38 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfhnv5v6bi30u"]
+[gd_scene load_steps=9 format=3 uid="uid://cfhnv5v6bi30u"]
 
 [ext_resource type="Script" path="res://Scripts/inimigoManager.gd" id="1_coy8l"]
+[ext_resource type="Texture2D" uid="uid://1b23264gl1cg" path="res://Imagens/ideia_de_inimigo_1.png" id="2_uockp"]
+[ext_resource type="Texture2D" uid="uid://btji27n7hw7ev" path="res://Imagens/cobra2.png" id="4_gq15a"]
+[ext_resource type="Texture2D" uid="uid://b04683gau8rsk" path="res://Imagens/cobra3.png" id="5_jun1w"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_hiu3t"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_j4ps4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_gq15a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jun1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gq15a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gq15a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gq15a")
+}],
+"loop": true,
+"name": &"blink",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ctf5n"]
 radius = 16.6667
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_scsko"]
-radius = 627.74
+radius = 624.039
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eiuap"]
 radius = 16.0312
@@ -22,9 +46,14 @@ script = ExtResource("1_coy8l")
 nav_agent = NodePath("movimentoInim/NavigationAgent2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.433333, 0, 1, 1)
-scale = Vector2(32, 32)
-texture = SubResource("CanvasTexture_hiu3t")
+visible = false
+texture = ExtResource("2_uockp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_j4ps4")
+animation = &"blink"
+frame = 2
+frame_progress = 0.395215
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.9, 0.9)
@@ -33,6 +62,11 @@ shape = SubResource("CircleShape2D_ctf5n")
 [node name="movimentoInim" type="Node2D" parent="."]
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="movimentoInim"]
+avoidance_enabled = true
+radius = 16.0
+max_speed = 160.0
+avoidance_layers = 5
+avoidance_mask = 5
 debug_enabled = true
 
 [node name="ReTime" type="Timer" parent="movimentoInim"]
@@ -55,6 +89,7 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="aggro/AreaMorte"]
 shape = SubResource("CircleShape2D_eiuap")
 
+[connection signal="velocity_computed" from="movimentoInim/NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
 [connection signal="timeout" from="movimentoInim/ReTime" to="." method="_on_re_time_timeout"]
 [connection signal="area_entered" from="aggro/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="aggro/Area2D" to="." method="_on_area_2d_area_exited"]
