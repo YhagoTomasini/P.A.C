@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://bbbrr2iqvimww"]
+[gd_scene load_steps=24 format=4 uid="uid://bbbrr2iqvimww"]
 
 [ext_resource type="Script" path="res://Scripts/menu_inicial.gd" id="1_6ecks"]
 [ext_resource type="Texture2D" uid="uid://0a10xgcx8x7y" path="res://Imagens/Parede-P.A.C.png" id="2_6n8y5"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://i0mt1g7avud4" path="res://Imagens/TileMap_PAC_Prisma.png" id="3_5xpe3"]
 [ext_resource type="PackedScene" uid="uid://dn3me0x6cd5ds" path="res://Cenas/pontos.tscn" id="4_2tvty"]
 [ext_resource type="FontFile" uid="uid://b4ikhaw8fs2lt" path="res://Fontes/BrunoAceSC-Regular.ttf" id="4_ejfdg"]
+[ext_resource type="AudioStream" uid="uid://cl7cn1quceas7" path="res://Audios/Musica jogo PAC.wav" id="7_yio84"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_vuu0h"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -457,6 +458,10 @@ text = "SAIR"
 libraries = {
 "": SubResource("AnimationLibrary_g2txg")
 }
+
+[node name="AudioMusicTheme" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_yio84")
+volume_db = -10.01
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/Leave" to="." method="_on_leave_pressed"]

@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://cqu7kb3ede3fq"
-path="res://.godot/imported/WalkinRetro.wav-c031d82afbfbdf22dfbcc54d332b4dbd.sample"
+uid="uid://cejktpwfqtjiw"
+path="res://.godot/imported/ddeathSound.wav-62e7d29b13e6de427f88922cd8b12df9.sample"
 
 [deps]
 
-source_file="res://Audios/WalkinRetro.wav"
-dest_files=["res://.godot/imported/WalkinRetro.wav-c031d82afbfbdf22dfbcc54d332b4dbd.sample"]
+source_file="res://Audios/ddeathSound.wav"
+dest_files=["res://.godot/imported/ddeathSound.wav-62e7d29b13e6de427f88922cd8b12df9.sample"]
 
 [params]
 

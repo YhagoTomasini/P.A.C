@@ -4,9 +4,11 @@ extends CharacterBody2D
 @export var ACELERACAO = VELO_MAX*10
 @export var FRICCAO = VELO_MAX*100
 @onready var eixos = Vector2.ZERO
+var posicaoI: Vector2
+
 @onready var anim = $AnimatedSprite2D
 @onready var audWalk = $AudioAndando
-var posicaoI: Vector2
+@onready var audPlaying: bool = false
 
 @onready var inimigos = [get_node("../Inimigo"), get_node("../Inimigo2"), get_node("../Inimigo3"), get_node("../Inimigo4")]
 
@@ -51,11 +53,17 @@ func aplica_movimento(accel):
 	
 func atualizar_anim():
 	if eixos == Vector2.ZERO:
-		audWalk.stop()
+		if audPlaying:
+			audWalk.stop()
+			audPlaying = false
+			
 		if anim.animation != "default":
 			anim.play("default")
 	else:
-		audWalk.play()
+		if audPlaying == false:
+			audWalk.play()
+			audPlaying = true
+			
 		if anim.animation != "moving":
 			anim.play("moving")
 		atualizar_direcao()
@@ -97,6 +105,7 @@ func gerenciaVidas():
 		
 	DadosGlobais.vidas
 	
+
 func reposition():
 	position = posicaoI
 	

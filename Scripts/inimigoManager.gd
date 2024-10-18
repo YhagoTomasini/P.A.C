@@ -16,6 +16,8 @@ func _ready():
 	
 	anim.play("default")
 	
+
+	
 func _physics_process(_delta):
 	if nav_agent.is_navigation_finished():
 		return

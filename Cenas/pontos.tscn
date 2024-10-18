@@ -3,11 +3,13 @@
 [sub_resource type="GDScript" id="GDScript_qhdlh"]
 script/source = "extends Area2D
 
-
+#@onready var player = get_node(\"../Prisma\")
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.name == \"AreaPrisma\":
 		DadosGlobais.score += 1
+		area.audCoin()
+		
 		queue_free()
 "
 
@@ -16,7 +18,7 @@ radius = 6.0
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_tbia8"]
 
-[node name="Pontos" type="Area2D"]
+[node name="Pontos" type="Area2D" groups=["pontos"]]
 collision_layer = 4
 collision_mask = 7
 script = SubResource("GDScript_qhdlh")
@@ -25,7 +27,7 @@ script = SubResource("GDScript_qhdlh")
 shape = SubResource("CircleShape2D_vrkr1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(1, 1, 0.541176, 1)
+self_modulate = Color(1, 0.803922, 0, 1)
 rotation = 0.785398
 scale = Vector2(8, 8)
 texture = SubResource("CanvasTexture_tbia8")

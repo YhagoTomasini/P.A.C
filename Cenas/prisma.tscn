@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bgoaxw7yrhqi5"]
+[gd_scene load_steps=11 format=3 uid="uid://bgoaxw7yrhqi5"]
 
 [ext_resource type="Script" path="res://Scripts/prismaControler.gd" id="1_g1cbp"]
 [ext_resource type="Texture2D" uid="uid://b846pi03w6c8b" path="res://Imagens/prisma BF.png" id="2_3xigm"]
 [ext_resource type="Texture2D" uid="uid://bqw3wk3er2h7e" path="res://Imagens/prsima BA.png" id="3_evud4"]
 [ext_resource type="AudioStream" uid="uid://cqu7kb3ede3fq" path="res://Audios/WalkinRetro.wav" id="4_jabue"]
+[ext_resource type="AudioStream" uid="uid://dglyd13bsyav" path="res://Audios/CoinRetro.wav" id="5_dcsxf"]
+[ext_resource type="Script" path="res://Scripts/audio_coin.gd" id="5_ug4ac"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_27rsb"]
 
@@ -62,10 +64,17 @@ shape = SubResource("CircleShape2D_6dumk")
 [node name="AreaPrisma" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 0
+script = ExtResource("5_ug4ac")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaPrisma"]
 shape = SubResource("CircleShape2D_5w67x")
 
+[node name="AudioCoin" type="AudioStreamPlayer2D" parent="AreaPrisma"]
+stream = ExtResource("5_dcsxf")
+volume_db = -16.0
+
 [node name="AudioAndando" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_jabue")
 volume_db = -16.0
+
+[connection signal="area_entered" from="AreaPrisma" to="." method="_on_area_prisma_area_entered"]

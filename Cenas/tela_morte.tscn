@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://rocnniu40wui"]
+[gd_scene load_steps=17 format=4 uid="uid://rocnniu40wui"]
 
 [ext_resource type="Script" path="res://Scripts/tela_morte.gd" id="1_36oa7"]
 [ext_resource type="Texture2D" uid="uid://0a10xgcx8x7y" path="res://Imagens/Parede-P.A.C.png" id="2_tkbh4"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dn3me0x6cd5ds" path="res://Cenas/pontos.tscn" id="4_8aa0x"]
 [ext_resource type="FontFile" uid="uid://b4ikhaw8fs2lt" path="res://Fontes/BrunoAceSC-Regular.ttf" id="4_e1k85"]
 [ext_resource type="Theme" uid="uid://duy7qv4vr6j5h" path="res://Fontes/botao_tema.tres" id="5_x8oto"]
+[ext_resource type="AudioStream" uid="uid://m72qs4b88c8i" path="res://Audios/Musica vitoria.wav" id="7_jiajs"]
+[ext_resource type="AudioStream" uid="uid://cejktpwfqtjiw" path="res://Audios/ddeathSound.wav" id="8_pv2jr"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_vuu0h"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -245,7 +247,7 @@ layout_mode = 2
 theme = ExtResource("5_x8oto")
 theme_override_font_sizes/font_size = 50
 toggle_mode = true
-text = "RESTART"
+text = "REINICIAR"
 
 [node name="BackMenu" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" groups=["button"]]
 layout_mode = 2
@@ -253,6 +255,14 @@ theme = ExtResource("5_x8oto")
 theme_override_font_sizes/font_size = 50
 toggle_mode = true
 text = "MENU"
+
+[node name="AudioWin" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_jiajs")
+volume_db = -4.0
+
+[node name="AudioMorte" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_pv2jr")
+volume_db = -4.0
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/BackMenu" to="." method="_on_back_menu_pressed"]

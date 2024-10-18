@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://m72qs4b88c8i"
+path="res://.godot/imported/Musica vitoria.wav-13da0125f0e6763d1f17d9e30170a1fd.sample"
+
+[deps]
+
+source_file="res://Audios/Musica vitoria.wav"
+dest_files=["res://.godot/imported/Musica vitoria.wav-13da0125f0e6763d1f17d9e30170a1fd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
